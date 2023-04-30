@@ -265,12 +265,30 @@ a.delete("b")
  ["a","b","c"].union(["b","e","f"])
  => ["a", "b", "c", "e", "f"] 
 
+ a = [1,2,3,4,5]
+ => [1, 2, 3, 4, 5]
+
+ a.collect { |i| i * 2 }     #Same as map
+ => [2, 4, 6, 8, 10]
  
+ a.reduce(:*)   # take an array and reduce it to a single value
+ => 120
 
+ a.bsearch { |i| i == 5 }
+ => 5
 
+ a.bsearch { |i| i == 7 }
+ => nil
 
+ a = [ "a", "b", "b", "b", "c" ]
+ => ["a", "b", "b", "b", "c"]
 
+ a.rindex("b")
+ => 3
 
+ a.filter { |i| i.length == 1 }
+ => ["a", "b", "b", "b", "c"]
 
-
+ a.filter { |i| i.length == 2 }
+ => [] 
 
